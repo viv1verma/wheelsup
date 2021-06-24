@@ -1,7 +1,9 @@
-//import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-//import 'package:flutter/rendering.dart';
+import 'package:flutter/rendering.dart';
 import 'navbarhome.dart';
 import 'signup.dart';
 import 'secondScreen.dart';
@@ -34,7 +36,7 @@ class app extends StatefulWidget {
 class appState extends State<app> {
   final _emailController = TextEditingController();
   final  _passwordController = TextEditingController();
-  /*Future<FirebaseUser>login(String email,String password) async{
+  Future<FirebaseUser>login(String email,String password) async{
     FirebaseAuth _auth = FirebaseAuth.instance;
     try{
       AuthResult result = await _auth.signInWithEmailAndPassword(email: email, password: password);
@@ -44,7 +46,7 @@ class appState extends State<app> {
       print("Your Email Id or Password might be wrong");
       return null;
     }
-  }*/
+  }
   @override
   Widget build(BuildContext context) {
 
@@ -179,24 +181,22 @@ class appState extends State<app> {
                           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
                           elevation: 10.0,
                           color: Colors.cyan[800],
-                          onPressed: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(builder: (context) => MyHomePage() ),);
-                          }
-                        /*async{
+                          onPressed: () 
+                        async{
                       final email = _emailController.text.toString().trim();
                       final password = _passwordController.text.toString().trim();
 
                       FirebaseUser user = await login(email, password);
 
                       if(user!=null){
-                        print("Congratulations LADDU BATVA DO");
-                      }
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => MyHomePage() ),);
+                          }
                       else(){
                         print("eror");
                       };
-                      },*/
+                      },
                       ),
                     )
                 ),

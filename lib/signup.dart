@@ -1,4 +1,6 @@
-//import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'login.dart';
 
@@ -8,7 +10,7 @@ class signup extends StatelessWidget{
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
   final _phoneController = TextEditingController();
-  /*Future<bool> signupUser(String name,String email,String password,String phone)
+  Future<bool> signupUser(String name,String email,String password,String phone)
   async{
     FirebaseAuth _auth = FirebaseAuth.instance;
     try{
@@ -20,7 +22,7 @@ class signup extends StatelessWidget{
       print("Err");
       return false;
     }
-  }*/
+  }
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
@@ -182,7 +184,7 @@ class signup extends StatelessWidget{
                             )),
                           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
                           color: Colors.cyan[600],
-                          onPressed: () {} /*async{
+                          onPressed: ()  async{
                             final  name = _nameController.text.toString().trim();
                             var email = _emailController.text.toString().trim();
                             final password = _passwordController.text.toString().trim();
@@ -198,7 +200,7 @@ class signup extends StatelessWidget{
                             else(){
                               print("nahi hua");
                             };
-                          },*/
+                          },
                         ),
                       )
                   ),

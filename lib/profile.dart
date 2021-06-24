@@ -3,7 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:wheelsup/Pages/ManageProfile.dart';
 import 'package:wheelsup/Pages/Faq.dart';
-import 'package:url_launcher/url_launcher.dart';
+// import 'package:url_launcher/url_launcher.dart';
 
 class Profile extends StatelessWidget {
   @override
@@ -136,7 +136,7 @@ class Profile extends StatelessWidget {
                padding:EdgeInsets.all(18),
                child:InkWell(
                  onTap: ()=>{
-                   _makingPhoneCall()
+                   //_makingPhoneCall()
                  },
                    child:Row(
                        children:[
@@ -185,15 +185,15 @@ class Profile extends StatelessWidget {
   }
 }
 
- _makingPhoneCall() async
-{
-  const url='tel:919464036165';
-  if(await canLaunch(url))
-  {
-    await launch(url);
-  }
-  else
-  {
-    throw 'Could not launch url';
-  }
-}
+//  _makingPhoneCall() async
+// {
+//   const url='tel:919464036165';
+//   if(await canLaunch(url))
+//   {
+//     await launch(url);
+//   }
+//   else
+//   {
+//     throw 'Could not launch url';
+//   }
+// }

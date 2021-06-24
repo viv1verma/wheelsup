@@ -11,7 +11,7 @@ class second extends StatelessWidget {
         child: SingleChildScrollView(
       child: Container(
           width: double.infinity,
-          //height:1000,
+          height:1000,
           decoration: BoxDecoration(
             gradient: LinearGradient(
                 begin: AlignmentDirectional.topStart,
@@ -144,7 +144,7 @@ class carSubs extends StatelessWidget {
       Padding(
           padding: EdgeInsets.only(top: 20, left: 10, right: 10),
           child: Container(
-              width: 500.0,
+              width: double.infinity,
               child: SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
                   child: Row(
@@ -391,7 +391,7 @@ class safeCars extends StatelessWidget {
       Padding(
         padding: EdgeInsets.only(top: 20, left: 10, right: 10),
         child: Container(
-          width: 500.0,
+          width: double.infinity,
           child: SingleChildScrollView(
             scrollDirection: Axis.horizontal,
             child:

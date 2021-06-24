@@ -42,104 +42,108 @@ class subs extends StatelessWidget{
 class items extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
-   return Container(
-     width:double.infinity,
-     height:1300,
-     color: Colors.grey[200],
-     child:Column(
-       children:<Widget>[
-     Padding(padding: EdgeInsets.only(top:20),
-        child: Text(
-            "Rent Cars for",
-            style:TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.w700)),
-                ),
-         Padding(padding: EdgeInsets.only(top:5),
-             child: Container(
-                 width: 300,
-                 height: 50,
-                 decoration: BoxDecoration(
-                   borderRadius: BorderRadius.all(Radius.circular(50)) ,
-                   gradient: LinearGradient(
-                       begin: AlignmentDirectional.topCenter,
-                       colors: [
-                         Colors.cyan[800],
-                         Colors.cyan[700],
-                         Colors.cyan[400],
-                         Colors.cyan[300]
-                       ]
-                   ),),
-                 child:
-                 Row(children:<Widget>[
-                   Padding(padding:EdgeInsets.only(left:10),
+   return Material(
+        child: SingleChildScrollView(
+          child: Container(
+         width:double.infinity,
+         height:1300,
+         color: Colors.grey[200],
+         child:Column(
+           children:<Widget>[
+         Padding(padding: EdgeInsets.only(top:20),
+            child: Text(
+                "Rent Cars for",
+                style:TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.w700)),
+                    ),
+             Padding(padding: EdgeInsets.only(top:5),
+                 child: Container(
+                     width: 300,
+                     height: 50,
+                     decoration: BoxDecoration(
+                       borderRadius: BorderRadius.all(Radius.circular(50)) ,
+                       gradient: LinearGradient(
+                           begin: AlignmentDirectional.topCenter,
+                           colors: [
+                             Colors.cyan[800],
+                             Colors.cyan[700],
+                             Colors.cyan[400],
+                             Colors.cyan[300]
+                           ]
+                       ),),
                      child:
-                     Icon(Icons.car_rental,
-                         color:Colors.white),),
-                   Padding(padding:EdgeInsets.only(left:20),
-                     child:
-                     Text(
-                       "for month & months",
-                       style: TextStyle(
-                         color: Colors.white,
-                           fontSize: 18,
-                           fontWeight: FontWeight.w900
+                     Row(children:<Widget>[
+                       Padding(padding:EdgeInsets.only(left:10),
+                         child:
+                         Icon(Icons.car_rental,
+                             color:Colors.white),),
+                       Padding(padding:EdgeInsets.only(left:20),
+                         child:
+                         Text(
+                           "for month & months",
+                           style: TextStyle(
+                             color: Colors.white,
+                               fontSize: 18,
+                               fontWeight: FontWeight.w900
+                           ),
+                         ),),
+                       Padding(padding:EdgeInsets.only(left:30),
+                         child:IconButton(
+                           icon:Icon(Icons.arrow_forward_sharp,
+                               color:Colors.white),
+                          onPressed: () => Navigator.push(context,
+                             MaterialPageRoute(builder: (context) => subCarList() ),),
+                         ),
                        ),
-                     ),),
-                   Padding(padding:EdgeInsets.only(left:30),
-                     child:IconButton(
-                       icon:Icon(Icons.arrow_forward_sharp,
-                           color:Colors.white),
-                      onPressed: () => Navigator.push(context,
-                         MaterialPageRoute(builder: (context) => subCarList() ),),
-                     ),
-                   ),
-                 ]
-                 )
+                     ]
+                     )
+                 ),
              ),
-         ),
 
-         Padding(
-             padding: EdgeInsets.only(top: 20, left: 20),
-             child: Align(
-                 alignment: Alignment.topLeft,
-                 child: Text(
-                   "Subscription benefits",
-                   style: TextStyle(
-                     fontSize: 24,
-                     fontWeight: FontWeight.w900,
-                     color: Colors.grey.withOpacity(1.0),
-                   ),
-                 ))),
+             Padding(
+                 padding: EdgeInsets.only(top: 20, left: 20),
+                 child: Align(
+                     alignment: Alignment.topLeft,
+                     child: Text(
+                       "Subscription benefits",
+                       style: TextStyle(
+                         fontSize: 24,
+                         fontWeight: FontWeight.w900,
+                         color: Colors.grey.withOpacity(1.0),
+                       ),
+                     ))),
 
-          Row(children: <Widget>[
-    Padding(padding: EdgeInsets.only(left:10),
-    child:
-            Icon(Icons.exposure_zero, size: 50,color:Colors.teal[500])),
-            Text(" Now Down \n Payment",
-            style: TextStyle(fontSize: 15,fontWeight: FontWeight.w600)),
-            Padding(padding: EdgeInsets.only(left:100),
-              child:
-            Icon(Icons.account_balance, size: 30,color:Colors.teal[500]),),
-            Text("  Cheaper than \n  EMI",
-            style: TextStyle(fontSize: 15,fontWeight: FontWeight.w600))
-          ]),
-         Container(height:20),
-         Row(children: <Widget>[
-           Padding(padding: EdgeInsets.only(left:10),
-               child:
-               Icon(Icons.car_repair, size: 50,color:Colors.teal[500])),
-           Text(" Free service\n & \n Maintanence",
-               style: TextStyle(fontSize: 15,fontWeight: FontWeight.w600)),
-           Padding(padding: EdgeInsets.only(left:90),
-             child:
-             Icon(Icons.more_time_rounded, size: 30,color:Colors.teal[500]),),
-           Text(" Extend Or \n Return\n Anytime",
-               style: TextStyle(fontSize: 15,fontWeight: FontWeight.w600))
-         ]),
-         safeCars(),
-         work()//-----------------------------------------------------------------------------------------------------------------------------------------
-        ]));
+              Row(children: <Widget>[
+        Padding(padding: EdgeInsets.only(left:10),
+        child:
+                Icon(Icons.exposure_zero, size: 50,color:Colors.teal[500])),
+                Text(" Now Down \n Payment",
+                style: TextStyle(fontSize: 15,fontWeight: FontWeight.w600)),
+                Padding(padding: EdgeInsets.only(left:100),
+                  child:
+                Icon(Icons.account_balance, size: 30,color:Colors.teal[500]),),
+                Text("  Cheaper than \n  EMI",
+                style: TextStyle(fontSize: 15,fontWeight: FontWeight.w600))
+              ]),
+             Container(height:20),
+             Row(children: <Widget>[
+               Padding(padding: EdgeInsets.only(left:10),
+                   child:
+                   Icon(Icons.car_repair, size: 50,color:Colors.teal[500])),
+               Text(" Free service\n & \n Maintanence",
+                   style: TextStyle(fontSize: 15,fontWeight: FontWeight.w600)),
+               Padding(padding: EdgeInsets.only(left:90),
+                 child:
+                 Icon(Icons.more_time_rounded, size: 30,color:Colors.teal[500]),),
+               Text(" Extend Or \n Return\n Anytime",
+                   style: TextStyle(fontSize: 15,fontWeight: FontWeight.w600))
+             ]),
+             safeCars(),
+             work()//-----------------------------------------------------------------------------------------------------------------------------------------
+            ])),
+     ),
+   );
   }
 }
 class safeCars extends StatelessWidget{
